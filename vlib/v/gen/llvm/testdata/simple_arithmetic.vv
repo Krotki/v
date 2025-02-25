@@ -1,0 +1,12 @@
+// vtest vflags: -path 'vlib/v/gen/llvm/testdata/vlib_override/'
+
+fn main() {
+	a := 123 + 456
+	b := 123 - 456
+	c := 2 * 4
+	d := 10 / 5
+	C.printf(c'%d\n', a)
+	C.printf(c'%d\n', b)
+	C.printf(c'%d\n', c)
+	C.printf(c'%d\n', d)
+}

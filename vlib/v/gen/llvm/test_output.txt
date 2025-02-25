@@ -1,0 +1,35 @@
+➜  villmo git:(master) ✗ VEXE=~/repos/v-priv/v ~/repos/v-priv/v -test-runner teamcity test -run-only '*.test_panic' /home/jakub/repos/villmo/src/villmo/gen/llvm/simple_test.v
+##teamcity[testSuiteStarted name='simple_test' flowId='0']
+##teamcity[testSuiteFinished name='simple_test' flowId='0' duration='1.853ms']
+##teamcity[message text='Test finished unexpectedly - exit code != 0' status='error' errorDetails=' FAIL     1.887 ms /home/jakub/repos/villmo/src/villmo/gen/llvm/simple_test.v
+#>>> START(1)
+#>>> FN_START()
+##teamcity[testStarted name='test_panic' locationHint='v_qn:///home/jakub/repos/villmo/src/villmo/gen/llvm/simple_test.v:test_panic' captureStandardOutput='true']
+This is visible
+V panic: Some unknown error
+v hash: 8d13882
+/tmp/v_1000/tsession_7ece1730e740_01JF2GEVBTQWEXJWCVVNWVNED8/simple_test.01JF2GEVC0QX40SHVEFXV0GBYM:5215: at _v_panic: Backtrace
+/tmp/v_1000/tsession_7ece1730e740_01JF2GEVBTQWEXJWCVVNWVNED8/simple_test.01JF2GEVC0QX40SHVEFXV0GBYM:9200: by main__test_panic
+/tmp/v_1000/tsession_7ece1730e740_01JF2GEVBTQWEXJWCVVNWVNED8/simple_test.01JF2GEVC0QX40SHVEFXV0GBYM:9261: by main
+#>>> AT_EXIT()']
+
+
+➜  villmo git:(master) ✗ VEXE=~/repos/v-priv/v ~/repos/v-priv/v -test-runner teamcity -stats test -run-only '*.test_panic' /home/jakub/repos/villmo/src/villmo/gen/llvm/simple_test.v
+##teamcity[testSuiteStarted name='simple_test' flowId='0']
+running tests in: /home/jakub/repos/villmo/src/villmo/gen/llvm/simple_test.v
+#>>> START(1)
+#>>> FN_START()
+##teamcity[testStarted name='test_panic' locationHint='v_qn:///home/jakub/repos/villmo/src/villmo/gen/llvm/simple_test.v:test_panic' captureStandardOutput='true']
+This is visible
+V panic: Some unknown error
+v hash: 8d13882
+/tmp/v_1000/tsession_79a8adc35740_01JF2GPNSWXDDYBFFXQYQ52T8J/simple_test.01JF2GPNSZAM56NGRQF2Q1FQ78:5344: at _v_panic: Backtrace
+/tmp/v_1000/tsession_79a8adc35740_01JF2GPNSWXDDYBFFXQYQ52T8J/simple_test.01JF2GPNSZAM56NGRQF2Q1FQ78:9775: by main__test_panic
+/tmp/v_1000/tsession_79a8adc35740_01JF2GPNSWXDDYBFFXQYQ52T8J/simple_test.01JF2GPNSZAM56NGRQF2Q1FQ78:9845: by main
+#>>> AT_EXIT()
+        V  source  code size:      29094 lines,     781574 bytes,   275 types,    12 modules,   131 files
+generated  target  code size:       9863 lines,     365421 bytes
+compilation took: 165.022 ms, compilation speed: 176303 vlines/s, cgen threads: 19
+
+##teamcity[testSuiteFinished name='simple_test' flowId='0' duration='173.102ms']
+➜  villmo git:(master) ✗

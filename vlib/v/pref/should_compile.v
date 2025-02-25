@@ -66,6 +66,9 @@ pub fn (prefs &Preferences) should_compile_filtered_files(dir string, files_ []s
 		if prefs.backend == .native && !prefs.should_compile_native(file) {
 			continue
 		}
+		if prefs.backend == .llvm && !prefs.should_compile_llvm(file) {
+			continue
+		}
 		if !prefs.backend.is_js() && !prefs.should_compile_asm(file) {
 			continue
 		}
@@ -159,6 +162,12 @@ fn fname_without_platform_postfix(file string) string {
 
 pub fn (prefs &Preferences) should_compile_native(file string) bool {
 	// allow custom filtering for native backends,
+	// but if there are no other rules, default to the c backend rules
+	return prefs.should_compile_c(file)
+}
+
+pub fn (prefs &Preferences) should_compile_llvm(file string) bool {
+	// allow custom filtering for llvm backend,
 	// but if there are no other rules, default to the c backend rules
 	return prefs.should_compile_c(file)
 }

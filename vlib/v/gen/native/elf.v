@@ -716,6 +716,8 @@ pub fn (mut g Gen) generate_linkable_elf_header() {
 	}
 	g.create_symtab(mut sections, mut g.symbol_table) // create the .symtab section
 	g.create_relocation('.rela.text', mut sections, [])
+	g.create_progbits('.debug_info', 0, [])
+	g.create_progbits('.debug_lines', 0, [])
 	g.create_shstrtab(mut sections) // create the .shstrtab section (this must be the last section!)
 
 	mut elf_header := g.default_elf_header()

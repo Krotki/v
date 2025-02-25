@@ -204,5 +204,8 @@ fn rebuild(prefs &pref.Preferences) {
 		.wasm {
 			util.launch_tool(prefs.is_verbose, 'builders/wasm_builder', os.args[1..])
 		}
+		.llvm {
+			util.launch_tool(prefs.is_verbose, 'builders/llvm_builder', os.args[1..])
+		}
 	}
 }

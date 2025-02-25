@@ -1,0 +1,6 @@
+// vtest vflags: -path 'vlib/v/gen/llvm/testdata/vlib_override/'
+
+C.printf('ASCII String\nwith newline\n'.str)
+C.printf('ASCII String\r\nwith windows newline\r\n'.str)
+C.printf('\ttab\n'.str)
+C.printf('zeroed\n\0 not visible\n'.str)
